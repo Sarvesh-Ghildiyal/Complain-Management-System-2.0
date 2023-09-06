@@ -1,15 +1,18 @@
 <aside class="bg-[#E5F3FF] sm:w-[24%] md:w-[20%] lg:w-[17%] h-screen flex flex-col">
-                
+   
+   <a href="{{route('home')}}">
+  
     <!--Logo -->
       <img class="w-[160px] h-auto mx-auto my-3" src="logo.png" alt="College image">         
     <!-- Portal Heading -->
       <h1 class=" mt-2 mb-3 sm:text-[1.1rem] sm:ml-1.5 md:text-[1.4rem] lg:text-[1.3rem] 
           font-[Roboto-Serif]">Complain Portal</h1>
-    
+   </a>
+   
     <!-- Nav Bar-->
       <nav class="text-lg">
         <ul class="flex flex-col">
-          <a href="#">
+          <a href="{{route('home')}}">
             <li class="p-3 hover:bg-blue-500 hover:text-white">
               <span>Fill Complain</span>    
             </li>

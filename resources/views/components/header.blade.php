@@ -1,14 +1,16 @@
 <header class="w-[85%] h-auto mx-auto mt-5 flex justify-between rounded-sm shadow-xl">
     <!-- Dashboard Text -->
-    <div class="w-auto p-2.5 flex items-center space-x-2">
+    <div class="w-auto p-2.5">
         <!-- ... SVG and Dashboard text ... -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-            <g fill="currentColor">
-                <circle cx="12" cy="6" r="4"/>
-                <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" opacity=".5"/>
-            </g>
-        </svg>
-        <p>Dashboard</p>
+        <a href="{{route('home')}}" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <g fill="currentColor">
+                    <circle cx="12" cy="6" r="4"/>
+                    <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" opacity=".5"/>
+                </g>
+            </svg>
+            <p>Dashboard</p>
+        </a>
     </div>
 
     <!-- Bell, User name, and Dropdown -->
