@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,31 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+// User CRUD Routes
+
+Route::middleware(['user'])->prefix('complaint')->group(function () {
+   Route::view('fill','user.fillComplain')->name('user.fillComp');
+   Route::post('fill',[ComplainController::class, 'store'])->name('user.storeComp');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ADMIN ROUTES

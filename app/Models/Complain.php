@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Complain extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'room_no',
+        'department',
+        'requested_by',
+        'reported_by',
+        'body',
+        'uid',
+        //... any other fields you want to be mass-assignable
+    ];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'UID');
+    }
 }

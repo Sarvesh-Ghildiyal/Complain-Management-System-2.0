@@ -31,7 +31,7 @@
             
               <!-- Header-->
              @include('components.header')
-        
+                
               {{-- Main content of the page --}}
                 {{$slot}}
         

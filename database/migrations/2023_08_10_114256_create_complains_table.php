@@ -16,10 +16,16 @@ return new class extends Migration
             $table->id('cid');
             $table->unsignedBigInteger('uid');
             $table->string('title');
+            $table->string('room_no');
+           
+            $table->string('department');    //Automatic filling with logged in user dpt
+            $table->string('reported_by');   //Automatic filling with logged in user 
+           
+            $table->string('requested_by');
             $table->string('body');
-            $table->string('status');
+            $table->string('status')->default('open');
             
-            //  Assingin complain to some user
+            //  Assingin complain to some worker
             $table->unsignedBigInteger('assigned_to')->nullable();
             $table->timestamp('assigned_at')->nullable();
             $table->timestamp('due_date')->nullable();

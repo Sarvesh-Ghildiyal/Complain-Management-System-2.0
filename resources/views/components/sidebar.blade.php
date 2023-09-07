@@ -3,7 +3,7 @@
    <a href="{{route('home')}}">
   
     <!--Logo -->
-      <img class="w-[160px] h-auto mx-auto my-3" src="logo.png" alt="College image">         
+      <img class="w-[160px] h-auto mx-auto my-3" src="{{ asset('logo.png') }}" alt="College image">         
     <!-- Portal Heading -->
       <h1 class=" mt-2 mb-3 sm:text-[1.1rem] sm:ml-1.5 md:text-[1.4rem] lg:text-[1.3rem] 
           font-[Roboto-Serif]">Complain Portal</h1>
@@ -12,7 +12,7 @@
     <!-- Nav Bar-->
       <nav class="text-lg">
         <ul class="flex flex-col">
-          <a href="{{route('home')}}">
+          <a href="{{route('user.fillComp')}}">
             <li class="p-3 hover:bg-blue-500 hover:text-white">
               <span>Fill Complain</span>    
             </li>
