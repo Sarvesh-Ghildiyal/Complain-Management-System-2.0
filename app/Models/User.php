@@ -16,7 +16,7 @@ class User extends Authenticatable
     const type_user='user';
     const type_worker='worker';
 
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.

@@ -63,7 +63,7 @@
     
                 <span class="no-shrink">{{ __('Log Out') }}</span>
     
-                <svg class="inline ml-[-0.5] flex-grow hover:group-hover:translate-x-2 transform transition-transform transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24">
+                <svg class="inline ml-[-0.5] flex-grow hover:group-hover:translate-x-2 transform tansition-transform transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24">
                     <g transform="rotate(180 12 12)">
                         <g fill="none" stroke="Black" stroke-linecap="round" stroke-width="1.5">
                             <path d="M9.002 7c.012-2.175.109-3.353.877-4.121C10.758 

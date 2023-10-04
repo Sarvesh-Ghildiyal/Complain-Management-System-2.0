@@ -32,9 +32,12 @@ class ComplainController extends Controller
      */
     public function store(StoreComplainRequest $request)
     {
-       
+        // using policy
+        $this->authorize('create', Complain::class);
+        
+        // validating data
         $validatedData = $request->validated();
-
+        
         //Merge data to array
         $dataToStore= array_merge($validatedData,[
             'uid'=>auth::user()->id,
@@ -43,7 +46,7 @@ class ComplainController extends Controller
         
         // Storing the complain
          $complain = Complain::create($dataToStore);
-         return redirect()->route('user.fillComp')->with('success', 'Complaint submitted successfully!');
+         return redirect()->route('user.fillComp')->with('success', 'Complaint submitted successfully!')->flush();
     }
 
     /**
