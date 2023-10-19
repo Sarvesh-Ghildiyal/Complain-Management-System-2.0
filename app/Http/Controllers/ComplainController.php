@@ -14,9 +14,28 @@ class ComplainController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        // Fetch the status from the query parameter, default to 'all'
+        $status = $request->query('status', 'all');
+        
+        // Initialize a query builder instance specific to the authenticated user's complaints
+        $complains = auth()->user()->complains();
+
+        // Apply filters based on the status
+        if ($status === 'open') {
+            $complains->where('status', 'open');
+        } elseif ($status === 'closed') {
+            $complains->where('status', 'closed');
+        }
+
+        // Paginate the results
+        $complains = $complains->paginate(5);
+   
+        // $complains = auth()->user()->complains()->paginate(5);
+        $data = array_merge(compact('complains'), ['action' => 'View']);
+        return view('user.viewComplain', $data);
     }
 
     /**
@@ -46,15 +65,18 @@ class ComplainController extends Controller
         
         // Storing the complain
          $complain = Complain::create($dataToStore);
-         return redirect()->route('user.fillComp')->with('success', 'Complaint submitted successfully!')->flush();
+         return redirect()->route('user.fillComp')->with('success', 'Complaint submitted successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Complain $complain)
     {
-        //
+        //showing table
+        // dd($complain);
+        $data = array_merge(compact('complain'), ['action' => 'Back']);
+        return view('user.complainAction', $data);
     }
 
     /**

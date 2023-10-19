@@ -20,6 +20,11 @@ class Complain extends Model
         //... any other fields you want to be mass-assignable
     ];
     
+    // For custom primary key to be used in 
+    // Route model Binding
+    protected $primaryKey = 'cid';
+
+    
     public function user()
     {
         return $this->belongsTo(User::class, 'UID');

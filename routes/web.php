@@ -37,8 +37,14 @@ require __DIR__.'/auth.php';
 // User CRUD Routes
 
 Route::middleware(['user'])->prefix('complaint')->group(function () {
+    
+    // Fill complain
    Route::view('fill','user.fillComplain')->name('user.fillComp');
    Route::post('fill',[ComplainController::class, 'store'])->name('user.storeComp');
+
+    // View Complain
+    Route::get('view',[ComplainController::class, 'index'])->name('user.viewComp');
+    Route::get('show/{complain}',[ComplainController::class, 'show'])->name('user.showComp');
 });
 
 
