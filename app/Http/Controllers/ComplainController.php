@@ -16,7 +16,7 @@ class ComplainController extends Controller
      */
     public function index(Request $request)
     {
-        //
+
         // Fetch the status from the query parameter, default to 'all'
         $status = $request->query('status', 'all');
         
@@ -33,8 +33,15 @@ class ComplainController extends Controller
         // Paginate the results
         $complains = $complains->paginate(5);
    
-        // $complains = auth()->user()->complains()->paginate(5);
-        $data = array_merge(compact('complains'), ['action' => 'View']);
+          // action based on uri
+          $uri=$request->segment(2);
+          if( $uri=='view') {
+              $action='View';
+          } elseif ($uri=='edit') {
+              $action='Edit';
+          }
+
+        $data=compact('complains','action');
         return view('user.viewComplain', $data);
     }
 

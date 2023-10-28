@@ -24,7 +24,7 @@
             </li>
           </a>
 
-          <a href="#">
+          <a href="{{route('user.editViewComp')}}">
             <li class="p-3 hover:bg-blue-500 hover:text-white">
                     <span>Edit Complain</span>    
             </li>

@@ -2,9 +2,9 @@
     
     
     {{-- Fill your complain Card --}}
-    <div class="w-4/5 h-auto mx-auto mt-12">
+    <div class="w-4/5 h-auto mx-auto mt-6">
 
-        <p class="text-3xl font-[Kaisei] mb-5">
+        <p class="text-3xl font-[Kaisei] mb-2">
             View <span class="text-sky-500">Complain {{$complain->cid}}</span>
         </p>
         

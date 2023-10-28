@@ -7,7 +7,7 @@
        {{-- For Displaying any error messages --}}
         @include('components.error')
 
-        <p class="text-3xl font-[Kaisei] mb-5">
+        <p class="text-3xl font-[Kaisei] mb-2">
             Fill Your Complain
         </p>
     
