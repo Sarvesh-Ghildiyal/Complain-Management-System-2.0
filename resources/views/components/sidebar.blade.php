@@ -10,10 +10,12 @@
    </a>
    
     <!-- Nav Bar-->
+    {{-- This is for user links --}}
+    @if(auth()->check() &&auth()->user()->role=='user')
       <nav class="text-lg">
         <ul class="flex flex-col">
-          <a href="{{route('user.fillComp')}}">
-            <li class="p-3 hover:bg-blue-500 hover:text-white">
+          <a href="{{route('user.fillComp')}}" id='fill-complain'>
+            <li class="p-3 hover:bg-blue-500 hover:text-white ">
               <span>Fill Complain</span>    
             </li>
           </a>
@@ -49,6 +51,95 @@
           </a>
         </ul>
       </nav>
+    @endif
+
+    
+
+    {{-- This is for admin links --}}
+    @if(auth()->check() &&auth()->user()->role=='admin')
+      <nav class="text-lg">
+        <ul class="flex flex-col">
+          <a href="{{route('user.fillComp')}}">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>Fill me</span>    
+            </li>
+          </a>
+
+          <a href="{{route('user.viewComp')}}">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>View me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+                    <span>edit me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>Check me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>mark me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>Delete me</span>    
+            </li>
+          </a>
+        </ul>
+      </nav>
+    @endif
+
+    {{-- This is for worker links --}}
+    @if(auth()->check() &&auth()->user()->role=='worker')
+      <nav class="text-lg">
+        <ul class="flex flex-col">
+          <a href="{{route('user.fillComp')}}">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>I'm Black</span>    
+            </li>
+          </a>
+
+          <a href="{{route('user.viewComp')}}">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>Slave me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+                    <span>Buy me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>spa me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>help me</span>    
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+              <span>kis me</span>    
+            </li>
+          </a>
+        </ul>
+      </nav>
+    @endif
 
     <!-- Logout Link-->
   
