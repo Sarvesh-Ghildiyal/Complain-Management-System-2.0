@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Blade::component('select-input', \App\View\Components\SelectInput::class);
     }
 }
