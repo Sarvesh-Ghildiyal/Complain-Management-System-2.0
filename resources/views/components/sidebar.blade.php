@@ -34,12 +34,20 @@
                     </li>
                 </a>
 
+<<<<<<< HEAD
                 <a href="{{ route('user.viewComp') }}" id="view-complain" >
                     <li
                         class="p-3 hover:bg-blue-500 hover:text-white ">
                         <span>View Complain</span>
                     </li>
                 </a>
+=======
+          <a href="{{route('user.editViewComp')}}">
+            <li class="p-3 hover:bg-blue-500 hover:text-white">
+                    <span>Edit Complain</span>    
+            </li>
+          </a>
+>>>>>>> 69180db91bd2420df94e68e1480df71fa1cb4c74
 
                 <a href="#">
                     <li class="p-3 hover:bg-blue-500 hover:text-white">

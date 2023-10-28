@@ -14,7 +14,7 @@ use App\Http\Controllers\ComplainController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
-|
+|  {{$slot}}
 */
 
 Route::get('/', function () {
@@ -44,7 +44,10 @@ Route::middleware(['user'])->prefix('complaint')->group(function () {
 
     // View Complain
     Route::get('view',[ComplainController::class, 'index'])->name('user.viewComp');
-    Route::get('show/{complain}',[ComplainController::class, 'show'])->name('user.showComp');
+    
+    // Edit Complain
+    Route::get('edit',[ComplainController::class, 'index'])->name('user.editViewComp');
+    
 });
 
 
@@ -58,6 +61,7 @@ Route::middleware(['user'])->prefix('complaint')->group(function () {
 
 
 
+Route::get('show/{complain}',[ComplainController::class, 'show'])->name('user.showComp');
 
 
 
