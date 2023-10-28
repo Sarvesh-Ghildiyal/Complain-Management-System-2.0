@@ -8,7 +8,7 @@
         @include('components.error')
 
         <p class="text-3xl font-[Kaisei] mb-5">
-           View your Complains
+           {{$action}} your Complains
         </p>
     
         
@@ -62,7 +62,7 @@
                                              {{-- {{dd($complain->cid)}} --}}
                                     </td>
                                     <td class="p-3 text-gray-800 border border-b text-center"> 
-                                      <a href="{{ route('user.showComp', $complain->cid)}}" class="text-blue-400 hover:text-blue-600 underline">{{$action}}</a>
+                                      <a href="{{ route($action == 'View' ? 'user.showComp' : 'user.editShowComp', $complain->cid)}}" class="text-blue-400 hover:text-blue-600 underline">{{$action}}</a>
                                     </td>
                                 </tr>
                              @endforeach

@@ -44,24 +44,15 @@ Route::middleware(['user'])->prefix('complaint')->group(function () {
 
     // View Complain
     Route::get('view',[ComplainController::class, 'index'])->name('user.viewComp');
+    Route::get('show/view/{complain}',[ComplainController::class, 'show'])->name('user.showComp');
     
     // Edit Complain
     Route::get('edit',[ComplainController::class, 'index'])->name('user.editViewComp');
+    Route::get('show/edit/{complain}',[ComplainController::class, 'show'])->name('user.editShowComp');
+    Route::post('show/edit/{complain}',[ComplainController::class, 'update'])->name('user.editUpdateComp');
+    
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('show/{complain}',[ComplainController::class, 'show'])->name('user.showComp');
 
 
 

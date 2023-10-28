@@ -78,11 +78,16 @@ class ComplainController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Complain $complain)
+    public function show(Request $request,Complain $complain)
     {
-        //showing table
-        // dd($complain);
-        $data = array_merge(compact('complain'), ['action' => 'Back']);
+         // action based on uri
+         $uri=$request->segment(3);
+         $readonly=false;
+         if( $uri=='view') {
+             $readonly=true;
+         }
+
+        $data=compact('complain','readonly');
         return view('user.complainAction', $data);
     }
 
@@ -99,7 +104,7 @@ class ComplainController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd('hello');
     }
 
     /**
